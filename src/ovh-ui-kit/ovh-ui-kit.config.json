@@ -138,5 +138,8 @@
   },
   "header-tabs": {
     "group": "nav"
+  },
+  "dual-list": {
+    "group": "others"
   }
 }

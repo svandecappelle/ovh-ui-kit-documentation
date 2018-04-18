@@ -121,5 +121,9 @@
   },
   "header-tabs": {
     "group": "nav"
+  },
+  "dual-list": {
+    "controller": "DualListCtrl",
+    "group": "others"
   }
 }
