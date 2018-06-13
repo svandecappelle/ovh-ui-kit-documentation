@@ -96,7 +96,14 @@ export default {
             options: {
               limit: 10000
             } }
-        ] }
+        ] },
+        { test: /\.(gif|png|jpe?g|svg)$/i,
+          use: [
+            { loader: 'file-loader',
+              options: {
+                limit: 10000
+              } }
+          ] }
     ]
   }
 }

@@ -11,6 +11,23 @@ class TemplateUtils {
         return loadAll(req);
     }
 
+    static loadGuidelinesReadme () {
+        const req = requireGuidelines();
+        const templates = [];
+        req.keys().forEach(readmeFile => {
+            const matches = readmeFile.match(/\.\/(\w+)\/(\w+)\//);
+            if (matches && matches.length > 2) {
+                templates[matches[2]] = {
+                    group: matches[1],
+                    friendlyName: _.capitalize(matches[2].replace(/_/g, " ")),
+                    url: `/${matches[1]}/${matches[2]}`,
+                    template: req(readmeFile)
+                };
+            }
+        });
+        return templates;
+    }
+
     static addLessComponentStates ($stateProvider, templates, config) {
         Object.keys(templates).forEach(templateName => {
             const templateConfig = {
@@ -52,6 +69,13 @@ class TemplateUtils {
             });
         });
     }
+
+    static addGuidelinesComponentStates ($stateProvider, templates) {
+        Object.keys(templates).forEach(templateName => {
+            // Create showcase route
+            $stateProvider.state(`showcase.oui-guidelines.${templateName}`, templates[templateName]);
+        });
+    }
 }
 
 function loadAll (req) {
@@ -71,6 +95,10 @@ function requireLess () {
 
 function requireAngularJS () {
     return require.context("ovh-ui-angular/packages", true, /^\.\/((?!node_modules).)*\/README\.md$/);
+}
+
+function requireGuidelines () {
+    return require.context("ovh-ui-guidelines/pages", true, /\.md$/);
 }
 
 export default TemplateUtils;

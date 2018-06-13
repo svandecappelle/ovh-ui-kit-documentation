@@ -1,8 +1,6 @@
 import changelogTemplate from "ovh-ui-angular/CHANGELOG.md";
 import config from "./ovh-ui-angular.config.json";
 import contributingTemplate from "ovh-ui-angular/CONTRIBUTING.md";
-
-// import decisionsTemplate from "./decisions.md";
 import introductionTemplate from "ovh-ui-angular/README.md";
 import templateUtils from "src/utils/template-utils";
 
@@ -15,7 +13,7 @@ export default function ($stateProvider) {
         .state("showcase.oui-angular", {
             url: "/oui-angular",
             friendlyName: "Components",
-            groupName: "oui-angular components",
+            groupName: "OVH UI Angular",
             redirectTo: "showcase.oui-angular.introduction",
             template: "<ui-view></ui-view>",
             weight: 9000,
@@ -69,12 +67,6 @@ export default function ($stateProvider) {
             friendlyName: "Changelog",
             template: changelogTemplate
         });
-
-    // .state("showcase.oui-angular.decisions", {
-    //     url: "/decisions",
-    //     friendlyName: "Decisions",
-    //     template: decisionsTemplate
-    // });
 
     templateUtils.addAngularJSComponentStates($stateProvider, templates, config);
 }

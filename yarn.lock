@@ -5003,6 +5003,9 @@ ovh-ui-angular@^2.15.0:
     escape-string-regexp "^1.0.5"
     popper.js "^1.12.9"
 
+"ovh-ui-guidelines@file:../ovh-ui-guidelines":
+  version "1.0.0"
+
 ovh-ui-kit@^2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.15.0.tgz#60743f60790d26ffdbf7bcf72ffff6aec53ff3ca"

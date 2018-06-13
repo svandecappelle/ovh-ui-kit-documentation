@@ -14,6 +14,7 @@ import "./components";
 import componentStatusConfig from "./init/component-status.config";
 import DocumentationRoutes from "./documentation/documentation.routes";
 import OvhUiAngularRoutes from "./ovh-ui-angular/ovh-ui-angular.routes";
+import OvhUiGuidelinesRoutes from "./ovh-ui-guidelines/ovh-ui-guidelines.routes";
 import OvhUiKitRoutes from "./ovh-ui-kit/ovh-ui-kit.routes";
 import themesConfig from "./init/themes.config";
 import versionsConfig from "./init/versions.config";
@@ -32,6 +33,7 @@ const app = angular
     .config(versionsConfig)
     .config(componentStatusConfig)
     .config(DocumentationRoutes)
+    .config(OvhUiGuidelinesRoutes)
     .config(OvhUiKitRoutes)
     .config(OvhUiAngularRoutes);
 
